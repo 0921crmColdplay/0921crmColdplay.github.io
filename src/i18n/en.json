@@ -1,0 +1,79 @@
+{
+  "nav": {
+    "about": "About",
+    "projects": "Projects",
+    "fitness": "Fitness",
+    "awards": "Awards",
+    "contact": "Contact"
+  },
+  "hero": {
+    "greeting": "Hi, I'm",
+    "name": "Cao Ruimeng",
+    "roles": ["Hardware Engineer", "PCB Designer", "Embedded Developer", "Fitness Enthusiast"],
+    "scroll": "Scroll Down"
+  },
+  "about": {
+    "title": "About Me",
+    "content": "Master's student at Beihang University, focused on hardware design and embedded system development. Multiple national first-prize competition awards. Specialized in high-speed PCB design, FPGA development, and analog circuit design. Passionate about fitness — a healthy body fuels productive work."
+  },
+  "projects": {
+    "title": "Projects",
+    "items": [
+      {
+        "title": "High-Speed Data Acquisition System",
+        "desc": "FPGA-based multi-channel high-speed data acquisition and processing system, supporting 1GSPS sampling rate",
+        "tags": ["FPGA", "Verilog", "PCB Design"]
+      },
+      {
+        "title": "Smart Power Management Module",
+        "desc": "High-efficiency DC-DC converter design with multi-output and intelligent power management",
+        "tags": ["Power Design", "PCB", "Embedded"]
+      },
+      {
+        "title": "Embedded Vision Recognition Platform",
+        "desc": "ARM+FPGA based real-time vision recognition system for industrial inspection",
+        "tags": ["ARM", "FPGA", "Machine Vision"]
+      }
+    ]
+  },
+  "fitness": {
+    "title": "Fitness",
+    "stats": {
+      "bench": "Bench Press",
+      "squat": "Squat",
+      "deadlift": "Deadlift",
+      "weight": "Body Weight",
+      "years": "Years Training"
+    }
+  },
+  "awards": {
+    "title": "Awards",
+    "items": [
+      {
+        "year": "2025",
+        "title": "National Undergraduate Electronic Design Contest — 1st Prize",
+        "desc": "National Level"
+      },
+      {
+        "year": "2024",
+        "title": "National FPGA Innovation Design Contest — 1st Prize",
+        "desc": "National Level"
+      },
+      {
+        "year": "2024",
+        "title": "National Embedded Chip & System Design Contest — 1st Prize",
+        "desc": "National Level"
+      }
+    ]
+  },
+  "contact": {
+    "title": "Contact",
+    "email": "Email",
+    "github": "GitHub",
+    "wechat": "WeChat",
+    "location": "Beijing, China"
+  },
+  "footer": {
+    "copyright": "All Rights Reserved"
+  }
+}

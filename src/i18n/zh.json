@@ -1,0 +1,79 @@
+{
+  "nav": {
+    "about": "关于我",
+    "projects": "项目作品",
+    "fitness": "健身成果",
+    "awards": "获奖经历",
+    "contact": "联系方式"
+  },
+  "hero": {
+    "greeting": "你好，我是",
+    "name": "曹芮萌",
+    "roles": ["硬件工程师", "PCB 设计师", "嵌入式开发者", "健身爱好者"],
+    "scroll": "向下滚动"
+  },
+  "about": {
+    "title": "关于我",
+    "content": "北京航空航天大学硕士在读，专注于硬件设计与嵌入式系统开发。拥有多项国家级竞赛一等奖经历，擅长高速 PCB 设计、FPGA 开发和模拟电路设计。热爱健身，相信健康的身体是高效工作的基础。"
+  },
+  "projects": {
+    "title": "项目作品",
+    "items": [
+      {
+        "title": "高速数据采集系统",
+        "desc": "基于 FPGA 的多通道高速数据采集与处理系统，支持 1GSPS 采样率",
+        "tags": ["FPGA", "Verilog", "PCB设计"]
+      },
+      {
+        "title": "智能电源管理模块",
+        "desc": "高效率 DC-DC 转换器设计，支持多路输出与智能功耗管理",
+        "tags": ["电源设计", "PCB", "嵌入式"]
+      },
+      {
+        "title": "嵌入式视觉识别平台",
+        "desc": "基于 ARM+FPGA 架构的实时视觉识别系统，应用于工业检测",
+        "tags": ["ARM", "FPGA", "机器视觉"]
+      }
+    ]
+  },
+  "fitness": {
+    "title": "健身成果",
+    "stats": {
+      "bench": "卧推",
+      "squat": "深蹲",
+      "deadlift": "硬拉",
+      "weight": "体重",
+      "years": "坚持年数"
+    }
+  },
+  "awards": {
+    "title": "获奖经历",
+    "items": [
+      {
+        "year": "2025",
+        "title": "全国大学生电子设计竞赛一等奖",
+        "desc": "国家级奖项"
+      },
+      {
+        "year": "2024",
+        "title": "全国大学生 FPGA 创新设计竞赛一等奖",
+        "desc": "国家级奖项"
+      },
+      {
+        "year": "2024",
+        "title": "全国大学生嵌入式芯片与系统设计竞赛一等奖",
+        "desc": "国家级奖项"
+      }
+    ]
+  },
+  "contact": {
+    "title": "联系方式",
+    "email": "邮箱",
+    "github": "GitHub",
+    "wechat": "微信",
+    "location": "北京，中国"
+  },
+  "footer": {
+    "copyright": "版权所有"
+  }
+}
