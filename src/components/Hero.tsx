@@ -1,8 +1,7 @@
 import { useEffect, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { motion } from 'framer-motion'
-import { ChevronDown, Cpu } from 'lucide-react'
-import Particles from '@tsparticles/react'
+import { ChevronDown, Sparkles } from 'lucide-react'
 
 const roles_zh = ['硬件工程师', 'PCB 设计师', '嵌入式开发者', '健身爱好者']
 const roles_en = ['Hardware Engineer', 'PCB Designer', 'Embedded Developer', 'Fitness Enthusiast']
@@ -52,133 +51,96 @@ export default function Hero() {
   const { text, showCursor } = useTypewriter(words)
 
   return (
-    <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden bg-[#0a0a0f]">
-      {/* Particles */}
-      <div className="absolute inset-0">
-        <Particles
-          id="hero-particles"
-          options={{
-            fullScreen: false,
-            fpsLimit: 60,
-            particles: {
-              number: { value: 80, density: { enable: true } },
-              color: { value: ['#00d4ff', '#a855f7', '#39ff14'] },
-              shape: { type: 'circle' },
-              opacity: { value: { min: 0.1, max: 0.4 } },
-              size: { value: { min: 1, max: 3 } },
-              links: {
-                enable: true,
-                distance: 150,
-                color: '#00d4ff',
-                opacity: 0.08,
-                width: 1,
-              },
-              move: {
-                enable: true,
-                speed: 1,
-                direction: 'none' as const,
-                random: true,
-                straight: false,
-                outModes: { default: 'bounce' as const },
-              },
-            },
-            interactivity: {
-              events: {
-                onHover: { enable: true, mode: 'grab' },
-              },
-              modes: {
-                grab: { distance: 200, links: { opacity: 0.2 } },
-              },
-            },
-            detectRetina: true,
-          }}
-          className="absolute inset-0"
-        />
-      </div>
+    <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden bg-[#FAF5FF] dark:bg-[#0f0a1a]">
+      {/* Decorative blobs */}
+      <div className="blob w-96 h-96 bg-purple-300 dark:bg-purple-700 -top-20 -right-20" />
+      <div className="blob w-64 h-64 bg-cyan-300 dark:bg-cyan-700 bottom-20 -left-20" />
+      <div className="blob w-48 h-48 bg-purple-400 dark:bg-purple-600 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-10" />
 
-      {/* Gradient overlays */}
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#0a0a0f]/40 to-[#0a0a0f] pointer-events-none" />
-      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-neon-blue/30 to-transparent" />
+      {/* Dot pattern */}
+      <div className="absolute inset-0 bg-dots opacity-30 dark:opacity-20" />
 
       {/* Content */}
-      <div className="relative z-10 text-center px-6">
-        {/* Avatar with HUD ring */}
+      <div className="relative z-10 text-center px-6 max-w-3xl">
+        {/* Avatar */}
         <motion.div
-          initial={{ opacity: 0, scale: 0.5 }}
+          initial={{ opacity: 0, scale: 0.7 }}
           animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.8, ease: 'easeOut' }}
-          className="mb-10 relative inline-block"
+          transition={{ duration: 0.7, ease: 'easeOut' }}
+          className="mb-10"
         >
-          <div className="absolute inset-0 rounded-full border border-neon-blue/30 pulse-glow" />
-          <div className="w-28 h-28 mx-auto rounded-full bg-gradient-to-br from-neon-blue/20 to-neon-purple/20 p-0.5 backdrop-blur">
-            <div className="w-full h-full rounded-full bg-[#0a0a0f] flex items-center justify-center">
-              <Cpu size={36} className="text-neon-blue neon-text" />
+          <div className="w-28 h-28 mx-auto rounded-3xl bg-gradient-to-br from-primary via-primary-light to-primary-lighter p-0.5 shadow-lg shadow-primary/20 rotate-3 hover:rotate-0 transition-transform duration-500">
+            <div className="w-full h-full rounded-3xl bg-white dark:bg-[#1a1025] flex items-center justify-center">
+              <Sparkles size={36} className="text-primary" />
             </div>
           </div>
         </motion.div>
 
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
+        {/* Greeting */}
+        <motion.div
+          initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.3, duration: 0.6 }}
-          className="text-neon-blue/60 text-sm tracking-[0.3em] mb-6 font-mono"
+          transition={{ delay: 0.2, duration: 0.5 }}
+          className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/5 border border-primary/10 mb-6"
         >
-          &gt; {t('hero.greeting')}
-        </motion.p>
+          <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
+          <span className="text-sm text-primary/70 font-medium">{t('hero.greeting')}</span>
+        </motion.div>
 
+        {/* Name */}
         <motion.h1
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.5, duration: 0.6 }}
-          className="text-5xl md:text-7xl font-heading font-black mb-8 gradient-text glitch-hover cursor-default"
+          transition={{ delay: 0.4, duration: 0.5 }}
+          className="text-5xl md:text-7xl font-heading font-extrabold mb-6 gradient-text leading-tight"
         >
           {t('hero.name')}
         </motion.h1>
 
+        {/* Typewriter */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.7, duration: 0.6 }}
-          className="h-12 flex items-center justify-center gap-2"
+          transition={{ delay: 0.6, duration: 0.5 }}
+          className="h-10 flex items-center justify-center mb-10"
         >
-          <span className="text-neon-green/50 font-mono">&gt;_</span>
-          <span className="text-xl md:text-2xl text-neon-green font-mono">
+          <span className="text-xl md:text-2xl text-[#64748b] dark:text-[#94a3b8] font-medium">
             {text}
           </span>
-          <span
-            className={`inline-block w-2.5 h-5 ml-0.5 bg-neon-green transition-opacity ${
-              showCursor ? 'opacity-100' : 'opacity-0'
-            }`}
-          />
+          <span className={`inline-block w-0.5 h-6 ml-1 bg-primary transition-opacity ${showCursor ? 'opacity-100' : 'opacity-0'}`} />
         </motion.div>
 
-        {/* Tech specs bar */}
+        {/* CTA buttons */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 1.0, duration: 0.6 }}
-          className="mt-10 flex flex-wrap items-center justify-center gap-4 text-xs font-mono text-cyber-border"
+          transition={{ delay: 0.8, duration: 0.5 }}
+          className="flex flex-wrap items-center justify-center gap-4"
         >
-          {['BEIHANG UNIVERSITY', 'HARDWARE ENGINEER', 'FPGA · PCB · EMBEDDED'].map((spec) => (
-            <span key={spec} className="px-3 py-1 border border-cyber-border rounded">
-              {spec}
-            </span>
-          ))}
+          <a href="#projects" className="btn-primary pulse-soft">
+            {t('nav.projects')}
+            <ChevronDown size={16} className="rotate-[-90deg]" />
+          </a>
+          <a
+            href="#contact"
+            className="px-7 py-3 rounded-xl font-semibold text-sm text-[#64748b] dark:text-[#94a3b8]
+                       border border-[#ede4ff] dark:border-[#2d1f40] hover:border-primary/30 hover:text-primary
+                       dark:hover:text-[#a78bfa] transition-all duration-200 bg-white/50 dark:bg-[#1a1025]/50"
+          >
+            {t('nav.contact')}
+          </a>
         </motion.div>
       </div>
 
-      {/* Scroll */}
+      {/* Scroll hint */}
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ delay: 1.5 }}
-        className="absolute bottom-8 flex flex-col items-center gap-3"
+        transition={{ delay: 1.4 }}
+        className="absolute bottom-8 flex flex-col items-center gap-2"
       >
-        <motion.div
-          animate={{ y: [0, 6, 0], opacity: [0.5, 1, 0.5] }}
-          transition={{ repeat: Infinity, duration: 2 }}
-        >
-          <ChevronDown size={18} className="text-neon-blue" />
+        <motion.div animate={{ y: [0, 6, 0] }} transition={{ repeat: Infinity, duration: 2 }}>
+          <ChevronDown size={18} className="text-primary/40" />
         </motion.div>
       </motion.div>
     </section>

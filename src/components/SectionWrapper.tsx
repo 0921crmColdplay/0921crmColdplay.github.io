@@ -10,11 +10,11 @@ export default function SectionWrapper({ children, id, className = '' }: Props) 
   return (
     <motion.section
       id={id}
-      initial={{ opacity: 0, y: 40 }}
+      initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: '-80px' }}
+      viewport={{ once: true, margin: '-60px' }}
       transition={{ duration: 0.6, ease: 'easeOut' }}
-      className={`relative min-h-screen flex flex-col items-center justify-center px-6 py-24 ${className}`}
+      className={`relative py-24 px-6 flex flex-col items-center ${className}`}
     >
       {children}
     </motion.section>

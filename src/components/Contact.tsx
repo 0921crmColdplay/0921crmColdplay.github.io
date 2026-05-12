@@ -7,30 +7,29 @@ export default function Contact() {
   const { t } = useTranslation()
 
   const links = [
-    { icon: Mail, label: t('contact.email'), href: '#', value: 'your@email.com' },
-    { icon: Globe, label: t('contact.github'), href: '#', value: 'github.com/0921crmColdplay' },
-    { icon: MessageCircle, label: t('contact.wechat'), href: '#', value: '微信ID' },
-    { icon: MapPin, label: t('contact.location'), href: null, value: t('contact.location') },
+    { icon: Mail, label: t('contact.email'), value: 'your@email.com' },
+    { icon: Globe, label: t('contact.github'), value: 'github.com/0921crmColdplay' },
+    { icon: MessageCircle, label: t('contact.wechat'), value: '微信ID' },
+    { icon: MapPin, label: t('contact.location'), value: t('contact.location') },
   ]
 
   return (
-    <SectionWrapper id="contact" className="bg-[#0a0a0f]">
+    <SectionWrapper id="contact" className="bg-white dark:bg-[#12081e]">
       <div className="max-w-2xl w-full text-center">
-        <motion.div
+        <motion.span
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
-          className="mb-4"
+          className="text-xs font-semibold tracking-[0.2em] text-primary/60 uppercase mb-4 block"
         >
-          <span className="text-neon-cyan/50 font-mono text-xs tracking-[0.3em]">&gt; SECTION_05</span>
-        </motion.div>
+          {t('contact.title')}
+        </motion.span>
 
         <motion.h2
-          initial={{ opacity: 0, y: -20 }}
+          initial={{ opacity: 0, y: -10 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-          className="text-4xl md:text-6xl font-heading font-bold mb-6 gradient-text"
+          className="text-3xl md:text-5xl font-heading font-bold mb-6 gradient-text"
         >
           {t('contact.title')}
         </motion.h2>
@@ -40,44 +39,29 @@ export default function Contact() {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ delay: 0.1 }}
-          className="text-gray-500 font-mono text-sm mb-12"
+          className="text-[#94a3b8] mb-12"
         >
-          &gt; ping me<span className="text-neon-blue animate-pulse">_</span>
+          期待与你的交流 / Looking forward to connecting
         </motion.p>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
           {links.map((link, i) => (
             <motion.div
               key={link.label}
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 16 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: i * 0.1 }}
-              whileHover={{ scale: 1.03 }}
+              transition={{ delay: i * 0.08 }}
+              whileHover={{ y: -2 }}
+              className="card p-4 flex items-center gap-4 text-left group"
             >
-              {link.href ? (
-                <a
-                  href={link.href}
-                  className="bg-cyber-card border border-cyber-border rounded-xl p-5 flex items-center gap-4
-                             hover:border-neon-blue/40 transition-all duration-300 group"
-                >
-                  <link.icon size={20} className="text-neon-blue group-hover:text-neon-cyan transition-colors" />
-                  <div className="text-left">
-                    <p className="text-[10px] font-mono text-gray-600 tracking-wider">{link.label}</p>
-                    <p className="text-sm font-mono text-gray-300 group-hover:text-neon-blue transition-colors">
-                      {link.value}
-                    </p>
-                  </div>
-                </a>
-              ) : (
-                <div className="bg-cyber-card border border-cyber-border rounded-xl p-5 flex items-center gap-4">
-                  <link.icon size={20} className="text-neon-blue" />
-                  <div className="text-left">
-                    <p className="text-[10px] font-mono text-gray-600 tracking-wider">{link.label}</p>
-                    <p className="text-sm font-mono text-gray-300">{link.value}</p>
-                  </div>
-                </div>
-              )}
+              <div className="w-10 h-10 rounded-xl bg-primary/5 flex items-center justify-center shrink-0 group-hover:bg-primary/10 transition-colors">
+                <link.icon size={18} className="text-primary" />
+              </div>
+              <div className="min-w-0">
+                <p className="text-[10px] font-semibold text-[#94a3b8] tracking-wider uppercase">{link.label}</p>
+                <p className="text-sm font-medium text-[#475569] dark:text-[#cbd5e1] truncate">{link.value}</p>
+              </div>
             </motion.div>
           ))}
         </div>
